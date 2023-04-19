@@ -1,4 +1,4 @@
-export const runtime = 'experimental-edge';
+export const runtime = 'edge';
 
 const endpoint = 'https://pokeapi.co/api/v2/ability/';
 
