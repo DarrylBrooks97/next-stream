@@ -50,7 +50,7 @@ export default function ClientForm({ options }: { options: string[] }) {
 							disabled={!isDone && clicked === o}
 							onClick={() => handleSubmit(o)}
 							className={cn(
-								'h-full w-full disabled:border-purple-400 truncate p-3 border-2 border-black hover:border-purple-400 rounded-md',
+								'h-full w-full disabled:border-purple-400 truncate p-3 min-h-[40px] border-2 border-black hover:border-purple-400 rounded-md',
 								!isDone && clicked === o && 'animate-pulse',
 							)}
 						>

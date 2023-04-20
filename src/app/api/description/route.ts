@@ -7,7 +7,7 @@ export async function POST(request: Request) {
 
 	if (!ability) return new Response('No text provided', { status: 400 });
 
-	const res = await fetch(endpoint + ability);
+	const res = await fetch(endpoint + ability, { cache: 'force-cache' });
 
 	if (!res.ok) return new Response('Error with pokeapi request', { status: 500 });
 	if (!res.body) return new Response('No ability found', { status: 200 });
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 		async start(controller) {
 			for (const line of lines) {
 				for (const text of line.split(/(\s)/g)) {
-					await delay(50);
+					await delay(10);
 					const chunk = encoder.encode(text);
 					controller.enqueue(chunk);
 				}
